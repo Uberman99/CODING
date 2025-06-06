@@ -1,22 +1,24 @@
 # NEUTRA-BALANCE
 
-This repository contains a small demonstration of a full-stack web application.
-The frontend uses **React** and **Tailwind CSS** loaded from CDNs. The backend is a
-minimal Python HTTP server that returns a mock meal plan.
+NEUTRA-BALANCE is a small nutrition optimization tool built with React and a Python (Flask) backend. The project currently uses mock food data but is structured so the backend can integrate with services like the USDA FoodData Central API.
 
 ## Running
 
-1. Start the server:
+1. Install Python requirements
+   ```bash
+   pip install -r server/requirements.txt
+   ```
+2. Start the server
    ```bash
    python3 server/server.py
    ```
-   This serves the API on `http://localhost:8000/api/mealplan` and also hosts the
-   static frontend.
+   The API will be available at `http://localhost:8000/api/mealplan` and the React frontend will be served on the same port.
 
-2. Open your browser at `http://localhost:8000` to use the app.
+3. Open your browser at `http://localhost:8000` to use the app.
 
-## Notes
+## Project structure
 
-This implementation avoids external dependencies so the API integration is
-limited to mock data. The structure is kept simple to allow swapping the backend
-with a more robust framework or live data source in the future.
+- **client/** – React frontend served as static files
+- **server/** – Flask backend with a simple meal plan generator
+
+This implementation keeps dependencies light but the code can be extended with real data sources and additional features.
